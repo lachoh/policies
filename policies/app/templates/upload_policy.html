@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Upload Policy</h1>
+    <form method="POST" enctype="multipart/form-data">
+        {{ form.hidden_tag() }}
+        {{ form.policy_name.label }} {{ form.policy_name() }}
+        {{ form.policy_file.label }} {{ form.policy_file() }}
+        {{ form.submit() }}
+    </form>
+{% endblock %}

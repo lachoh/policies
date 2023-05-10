@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Dashboard</h1>
+    <ul>
+        {% for policy in policies %}
+            <li>
+                <a href="{{ url_for('view_policy', policy_id=policy.id) }}">
+                    {{ policy.name }} 
+                    {% if policy.id in viewed_policy_ids %}
+                        (Viewed)
+                    {% else %}
+                        (Not Viewed)
+                    {% endif %}
+                </a>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}

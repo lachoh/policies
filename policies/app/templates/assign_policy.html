@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Assign Policy</h1>
+    <form method="POST">
+        {{ form.hidden_tag() }}
+        {{ form.policy.label }} {{ form.policy() }}
+        {{ form.team.label }} {{ form.team() }}
+        {{ form.submit() }}
+    </form>
+{% endblock %}
